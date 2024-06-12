@@ -1,0 +1,24 @@
+{
+    "name": "Nvidia-CUDA-Dev",
+    "build": {
+        // Path is relative to the devcontainer.json file.
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+			"extensions": [
+                "vscjava.vscode-java-pack",
+                "redhat.fabric8-analytics",
+                "ms-azuretools.vscode-docker"
+            ]
+		}
+    },
+    "runArgs": [
+        "--gpus", "all"
+    ]
+}
