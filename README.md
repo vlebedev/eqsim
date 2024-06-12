@@ -2,20 +2,22 @@
 
 **Table of Contents**
 
-- [[#Introduction|Introduction]]
-- [[#Rationale Behind the Study|Rationale Behind the Study]]
-- [[#Overview of Simulation Implementations|Overview of Simulation Implementations]]
-	- [[#Overview of Simulation Implementations#Naive Earthquake Damage Calculation Model|Naive Earthquake Damage Calculation Model]]
-	- [[#Overview of Simulation Implementations#Simulation Parameters|Simulation Parameters]]
-	- [[#Overview of Simulation Implementations#Technological Implementation|Technological Implementation]]
-- [[#Benchmarking and Performance Analysis|Benchmarking and Performance Analysis]]
-	- [[#Benchmarking and Performance Analysis#Hardware and Environment Setup|Hardware and Environment Setup]]
-	- [[#Benchmarking and Performance Analysis#Benchmarking Results|Benchmarking Results]]
-	- [[#Benchmarking and Performance Analysis#Interpretation of Results|Interpretation of Results]]
-	- [[#Benchmarking and Performance Analysis#Source Code Availability|Source Code Availability]]
-- [[#Implications for Production Systems|Implications for Production Systems]]
-- [[#Conclusion|Conclusion]]
-- [[#Appendix: How to run models|Appendix: How to run models]]
+# Table of Contents
+
+- [Introduction](#introduction)
+- [Rationale Behind the Study](#rationale-behind-the-study)
+- [Overview of Simulation Implementations](#overview-of-simulation-implementations)
+  - [Naive Earthquake Damage Calculation Model](#naive-earthquake-damage-calculation-model)
+  - [Simulation Parameters](#simulation-parameters)
+  - [Technological Implementation](#technological-implementation)
+- [Benchmarking and Performance Analysis](#benchmarking-and-performance-analysis)
+  - [Hardware and Environment Setup](#hardware-and-environment-setup)
+  - [Benchmarking Results](#benchmarking-results)
+  - [Interpretation of Results](#interpretation-of-results)
+  - [Source Code Availability](#source-code-availability)
+- [Implications for Production Systems](#implications-for-production-systems)
+- [Conclusion](#conclusion)
+- [Appendix: How to run models](#appendix-how-to-run-models)
 
 **Abstract**
 
