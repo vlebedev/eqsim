@@ -1,7 +1,5 @@
 # Comparing simulation technologies across MATLAB, C, Python and Java
 
-**Table of Contents**
-
 # Table of Contents
 
 - [Introduction](#introduction)
