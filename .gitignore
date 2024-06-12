@@ -1,3 +1,9 @@
+# VSCode
+.vscode/
+
+# Java
+target/
+
 # Compiled class file
 *.class
 
