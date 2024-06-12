@@ -1,6 +1,6 @@
 # Comparing simulation technologies across MATLAB, C, Python and Java
 
-# Table of Contents
+## Table of Contents
 
 - [Introduction](#introduction)
 - [Rationale Behind the Study](#rationale-behind-the-study)
