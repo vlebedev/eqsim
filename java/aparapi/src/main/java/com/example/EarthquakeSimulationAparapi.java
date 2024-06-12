@@ -3,7 +3,7 @@
 // Aparapi implementation
 // 
 // Model assumptions:
-// - All insured properties (assets) located on the EQ fault line and spead evenly
+// - All insured properties (assets) located on the EQ fault line and spread evenly
 // - Each property has location, value, construction type and soil amplification parameters
 // - Each EQ event has epicenter location and magnitude
 //
