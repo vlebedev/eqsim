@@ -2,7 +2,7 @@
 
 **Abstract**
 
-This blog post delves into a comparative analysis of natural catastrophe (natcat) simulation technologies across multiple programming environments. The study assesses the performance, efficiency, and ease of transitioning from MATLAB/R-based model development to production-ready systems on GPU-enabled servers using languages and technologies like Python/PyTorch and Java/TornadoVM. Key findings reveal significant performance differences, with GPU implementations markedly outperforming CPU-based counterparts. Insights from the study suggest strategic technology selections for insurance firms, aiming to enhance the speed and accuracy of risk assessments, which could potentially revolutionize natcat modeling and insurance product tailoring.
+This paper offers a comparative analysis of natural catastrophe (natcat) simulation technologies across multiple programming environments. The study assesses the performance, efficiency, and ease of transitioning from MATLAB/R-based model development to production-ready systems on GPU-enabled servers using languages and technologies like Python/PyTorch and Java/TornadoVM. Key findings reveal significant performance differences, with GPU implementations markedly outperforming CPU-based counterparts. Insights from the study suggest strategic technology selections for insurance firms, aiming to enhance the speed and accuracy of risk assessments, which could potentially revolutionize natcat modeling and insurance product tailoring.
 
 ## Introduction
 
