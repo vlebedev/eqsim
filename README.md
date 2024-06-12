@@ -12,6 +12,7 @@
   - [Hardware and Environment Setup](#hardware-and-environment-setup)
   - [Benchmarking Results](#benchmarking-results)
   - [Interpretation of Results](#interpretation-of-results)
+  - [Specific Observations](#specific-observations)
   - [Source Code Availability](#source-code-availability)
 - [Implications for Production Systems](#implications-for-production-systems)
 - [Conclusion](#conclusion)
@@ -104,11 +105,29 @@ The results from the benchmarking are summarized in the table below, showcasing 
 | Python   | PyTorch   | CPU (parallel)       | 859.893   |
 | Matlab   | MATLAB    | CPU (single thread)  | 6387.674  |
 
+The timing data provided reflects simulations of 100,000 earthquake events impacting a portfolio of 1,000 properties. Before recording the actual timings, between 50 and 100 warm-up iterations were conducted for some implementations to stabilize performance metrics.
+
 ### Interpretation of Results
 
 The data reveals significant variations in execution times, which are influenced by the choice of programming language, library, and whether the computations were carried out on GPU or CPU. Python's PyTorch implementation on GPU stands out as the fastest, demonstrating the effectiveness of optimized GPU kernels in high-level languages for complex mathematical computations. On the other end, MATLAB's single-threaded CPU performance underscores the potential bottlenecks when traditional methods are applied without parallelization or hardware acceleration.
 
 These results underscore the importance of selecting the right technology stack based on specific operational requirements and computational constraints. They also highlight the evolving nature of computational tools in handling intensive simulations like those required in natural catastrophe modeling.
+
+## Specific Observations
+
+During this study, several interesting findings were noted that may be beneficial for researchers and practitioners.
+
+### MATLAB
+
+While MATLAB is convenient for prototyping and model development, it offers limited capabilities for automatically optimizing parallel workloads. For instance, straightforward parallelization of the outer for loop (iterating through earthquake events) with parfor resulted in execution times increasing from 7 seconds in single-threaded mode to 10 seconds. Profiling indicated that most of this time was spent coordinating and transferring data between processes (or threads, depending on the parpool configuration). To address this, we optimized the code by implementing data chunking and limiting the number of workers, achieving results comparable to multi-threaded PyTorch and single-threaded TornadoVM, where no manual optimization was necessary.
+
+### All CUDA-based Implementations
+
+All implementations using custom C/CUDA code for the computational kernel consistently showed similar performance, around 4 ms. This is notably 20 times slower than PyTorch/GPU and five times slower than TornadoVM/GPU, highlighting the efficient automatic CUDA optimization techniques present in both frameworks.
+
+### PyTorch and TornadoVM
+
+Both PyTorch and TornadoVM allow seamless switching of the computation provider (e.g., from CPU to GPU) without requiring modifications to the simulation algorithms. This is particularly advantageous in enterprise environments, where system lifespans can extend for decades. Integrating new computing technologies into these systems is typically costly and time-consuming, largely due to the absence of effective abstraction layers between the simulation algorithms and the underlying hardware. PyTorch and TornadoVM stand out as potential candidates for such abstraction layers. TornadoVM, in particular, is compelling as it is Java-based—aligning closely with the enterprise stack—and supports not only CPUs and various GPUs but also FPGAs.
 
 ### Source Code Availability
 
