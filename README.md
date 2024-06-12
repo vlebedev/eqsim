@@ -119,7 +119,7 @@ During this study, several interesting findings were noted that may be beneficia
 
 ### MATLAB
 
-While MATLAB is convenient for prototyping and model development, it offers limited capabilities for automatically optimizing parallel workloads. For instance, straightforward parallelization of the outer for loop (iterating through earthquake events) with parfor resulted in execution times increasing from 7 seconds in single-threaded mode to 10 seconds. Profiling indicated that most of this time was spent coordinating and transferring data between processes (or threads, depending on the parpool configuration). To address this, we optimized the code by implementing data chunking and limiting the number of workers, achieving results comparable to multi-threaded PyTorch and single-threaded TornadoVM, where no manual optimization was necessary.
+While MATLAB is convenient for prototyping and model development, it offers limited capabilities for automatically optimizing parallel workloads. For instance, straightforward parallelization of the outer `for` loop (iterating through earthquake events) with `parfor` resulted in execution times increasing from 7 seconds in single-threaded mode to 10 seconds. Profiling indicated that most of this time was spent coordinating and transferring data between processes (or threads, depending on the parpool configuration). To address this, we optimized the code by implementing data chunking and limiting the number of workers, achieving results comparable to multi-threaded PyTorch and single-threaded TornadoVM, where no manual optimization was necessary.
 
 ### All CUDA-based Implementations
 
