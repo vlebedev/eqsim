@@ -1,8 +1,25 @@
 # Comparing simulation technologies across MATLAB, C, Python and Java
 
+**Table of Contents**
+
+- [[#Introduction|Introduction]]
+- [[#Rationale Behind the Study|Rationale Behind the Study]]
+- [[#Overview of Simulation Implementations|Overview of Simulation Implementations]]
+	- [[#Overview of Simulation Implementations#Naive Earthquake Damage Calculation Model|Naive Earthquake Damage Calculation Model]]
+	- [[#Overview of Simulation Implementations#Simulation Parameters|Simulation Parameters]]
+	- [[#Overview of Simulation Implementations#Technological Implementation|Technological Implementation]]
+- [[#Benchmarking and Performance Analysis|Benchmarking and Performance Analysis]]
+	- [[#Benchmarking and Performance Analysis#Hardware and Environment Setup|Hardware and Environment Setup]]
+	- [[#Benchmarking and Performance Analysis#Benchmarking Results|Benchmarking Results]]
+	- [[#Benchmarking and Performance Analysis#Interpretation of Results|Interpretation of Results]]
+	- [[#Benchmarking and Performance Analysis#Source Code Availability|Source Code Availability]]
+- [[#Implications for Production Systems|Implications for Production Systems]]
+- [[#Conclusion|Conclusion]]
+- [[#Appendix: How to run models|Appendix: How to run models]]
+
 **Abstract**
 
-This paper offers a comparative analysis of natural catastrophe (natcat) simulation technologies across multiple programming environments. The study assesses the performance, efficiency, and ease of transitioning from MATLAB/R-based model development to production-ready systems on GPU-enabled servers using languages and technologies like Python/PyTorch and Java/TornadoVM. Key findings reveal significant performance differences, with GPU implementations markedly outperforming CPU-based counterparts. Insights from the study suggest strategic technology selections for insurance firms, aiming to enhance the speed and accuracy of risk assessments, which could potentially revolutionize natcat modeling and insurance product tailoring.
+This paper offers a comparative analysis of natural catastrophe (natcat) simulation technologies across multiple programming environments. The study assesses the performance, efficiency, and ease of transitioning from MATLAB-based model development to production-ready systems on GPU-enabled servers using languages and technologies like Python/PyTorch and Java/TornadoVM. Key findings reveal significant performance differences, with GPU implementations markedly outperforming CPU-based counterparts. Insights from the study suggest strategic technology selections for insurance firms, aiming to enhance the speed and accuracy of risk assessments, which could potentially revolutionize natcat modeling and insurance product tailoring.
 
 ## Introduction
 
@@ -113,4 +130,9 @@ This exploration into various simulation technologies has highlighted key insigh
 
 **Future Work:** There remains a lot of room for further research, especially in optimizing existing models and exploring new computational frameworks that could further reduce computation times and enhance data handling capabilities. Investigating hybrid models that leverage both CPU and GPU resources effectively could also yield significant benefits.
 
+# Appendix: How to run models
+
+The easiest way to run all implementations (except for MATLAB-based ones) is by using the Visual Studio Code devcontainers feature. Each project has a corresponding `.devcontainers` directory with a settings file and Dockerfile that defines a suitable container for running each simulation. After opening a project in VS Code, re-open it in a devcontainer. Then follow the instructions given in comments at the top of each source file.
+
+One important note about the host machine setup: As all simulations are GPU-based, your host machine's GPU must be accessible to the devcontainers. To enable this, NVIDIA Container Toolkit needs to be installed on the host machine prior to running the simulations. Please find detailed installation instructions here: [NVIDIA Docker Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html).
 
