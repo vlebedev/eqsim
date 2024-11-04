@@ -11,6 +11,7 @@
 // damage = max(0, (1.0 - 0.01 * distance_from_epicenter) * (0.3 + 0.2 * construction_type + 0.02 * magnitude + 0.1 * amplification))
 //
 // Make sure it is opened in devcontainer, then run it with the following:
+// # make all
 // # mvn exec:java -Dexec.args="<numEvents> <numProperties> <warmingUpIterations>"
 
 package com.example;
